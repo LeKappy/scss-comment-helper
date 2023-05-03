@@ -2,13 +2,20 @@
   "name": "scss-comment-helper",
   "displayName": "SCSS Comment Helper",
   "description": "Automatically insert comments for nested SCSS classes, making it easier to navigate and understand the code structure.",
+  "icon": "./assets/logo-128x128.png",
+  "keywords": [
+    "scss",
+    "comment",
+    "helper"
+  ],
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.77.0"
   },
   "categories": [
-    "CSS"
+    "Other"
   ],
+  "license": "MIT",
   "activationEvents": [],
   "main": "./extension.js",
   "contributes": {
