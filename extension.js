@@ -42,14 +42,16 @@ function addCommentsForNestedClasses(editor, nestedClasses) {
 	nestedClasses.forEach(nestedClass => {
 		// Allows to know the position of the selector in the document by its index
 		const position = document.positionAt(nestedClass.index);
+		// Move the position one line up to insert the comment above the selector
+		const newPosition = position.with(position.line - 1, position.character);
 		// Gets the exact line where the target is located
-		const line = document.lineAt(position.line);
-		// Get the indendation to correctly align the comment
+		const line = document.lineAt(newPosition.line);
+		// Get the indentation to correctly align the comment
 		const indentation = line.text.substring(0, line.firstNonWhitespaceCharacterIndex);
 		// The comment added
 		const comment = `${indentation}// ${nestedClass.comment}\n`;
 
-		const prevLine = position.line - 1;
+		const prevLine = newPosition.line - 1;
 		if (prevLine >= 0) {
 			const prevLineText = document.lineAt(prevLine).text.trim();
 			// Checks if the comment already exists so as not to add it again
@@ -59,7 +61,7 @@ function addCommentsForNestedClasses(editor, nestedClasses) {
 		}
 
 		// Adds the comment to the specified position in the list of changes to be made to the file
-		edit.insert(document.uri, position, comment);
+		edit.insert(document.uri, newPosition, comment);
 	});
 
 	// Adds comments to the file

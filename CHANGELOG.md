@@ -2,6 +2,17 @@
 
 All notable changes to the "scss-comment-helper" extension will be documented in this file.
 
+## [1.0.0] - 2023-05-04
+### Changed
+- Changed version number to 1.0.0 to indicate a stable release.
+
+### Fixed
+- Fixed incorrect placement and formatting of comments for nested SCSS selectors
+
+### Improved
+- Improved code comments for better understanding of the extension's functionality
+- Reduced the file size of the extension logo
+
 ## [0.0.2] - 2023-05-04
 ### Fixed
 - Fixed issue where the extension was activated on non-SCSS files

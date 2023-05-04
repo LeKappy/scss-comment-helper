@@ -8,8 +8,10 @@ function detectNestedSelectorsAndParents(text) {
     let stack = {};
     let depth = 0;
     let nestedClasses = [];
+    let currentIndex = 0;
 
     lines.forEach((line) => {
+        currentIndex += line.length + 1;
         const trimmedLine = line.trim();
         const openBraceFound = trimmedLine.includes('{');
         const closeBraceFound = trimmedLine.includes('}');
@@ -26,8 +28,7 @@ function detectNestedSelectorsAndParents(text) {
 
                 if (depth > 0) {
                     const commentText = Object.values(stack).join('').trim();
-                    const index = text.indexOf(line);
-                    nestedClasses.push({ comment: commentText, index });
+                    nestedClasses.push({ comment: commentText, index: currentIndex });
                 }
             }
 
