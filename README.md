@@ -54,11 +54,7 @@ None at the moment. If you find any issues or have feature requests, please [ope
 
 ## Release Notes
 
-### 0.0.1
-
-- Initial version of SCSS Comment Helper
-- Automatically detects and comments nested SCSS selectors (after using the keyboard shortcut)
-- Improves readability and maintainability of SCSS files
+For detailed release notes, please see the [CHANGELOG.md](CHANGELOG.md) file.
 
 ### Contributing
 
