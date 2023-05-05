@@ -50,7 +50,11 @@ These comments help you to understand the structure of the SCSS code, to make it
 
 ## Known Issues
 
-None at the moment. If you find any issues or have feature requests, please [open an issue on GitHub](https://github.com/LeKappy/scss-comment-helper/issues).
+- There might be a conflict with the [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag) extension, causing an error when using the keyboard shortcut `Ctrl + Z` (so to cancel the comments added by the SCSS Comment Helper extension). We are aware of this issue and are working on a fix. If you experience this problem, try disabling the Auto Rename Tag extension temporarily.
+- The extension does not currently handle selectors with commas (e.g., `.classOne, .classTwo`) correctly. We are aware of this limitation and are working on improving the handling of such cases.
+
+If you find any other issues or have feature requests, please [open an issue on GitHub](https://github.com/LeKappy/scss-comment-helper/issues).
+
 
 ## Release Notes
 
